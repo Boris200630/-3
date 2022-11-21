@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+        <table>
+            <tr>
+                <td>Вася</td>
+                <td>Пупкин</td>
+            </tr>
+            <tr>
+                <td>Иван</td>
+                <td>Иванов</td>
+            </tr>
+            <tr>
+                <td>Петя</td>
+                <td>Петров</td>
+            </tr>
+        </table>
+        <div class="box"> 
+            <input type="text" class="name">Name <br>
+            <input type="text" class="surname">Surname <br>
+            <button>Отправить</button>
+        </div>
+   
+    <script>
+        let table = document.querySelector("table");
+        let name = document.querySelector(".name");
+        let surname = document.querySelector(".surname");
+        let btn = document.querySelector("button");
+
+        table.onclick = function(event){
+            let target = event.target;
+            if(target.tagName != 'TD') return;
+            if(target.tagName == 'TD') {
+                target.innerText = prompt("Изменить",target.innerText);
+            }
+        }
+
+        btn.onclick = function() {
+            let tr = document.createElement("tr");
+            if(name.value != "" && surname.value != "") {
+                tr.innerHTML = `<td>${name.value}</td><td>${surname.value}</td>`;
+                table.appendChild(tr);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

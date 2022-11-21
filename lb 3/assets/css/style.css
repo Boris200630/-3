@@ -1,0 +1,11 @@
+table{
+    width:400px;
+    margin:0 auto;
+}
+table tr td{
+    border:1px solid silver;
+}
+.box {
+    width:400px;
+    margin:0 auto;
+}
